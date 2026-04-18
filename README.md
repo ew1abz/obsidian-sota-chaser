@@ -1,11 +1,16 @@
-# ObsidianChaser 🏔️
+# obsidian-sota-chaser 🏔️
 
-Convert an [Obsidian](https://obsidian.md) Markdown chaser log into a **SOTA V2 CSV**
-file ready to upload at [sotadata.org.uk][chaser-upload].
+Convert a Markdown chaser log into a **SOTA V2 CSV** or **ADIF** file ready to
+upload at [sotadata.org.uk][chaser-upload].
+
+Works with any Markdown file that contains a header block and a log table —
+optimised for [Obsidian](https://obsidian.md) but not limited to it.
 
 [chaser-upload]: https://www.sotadata.org.uk/en/upload/chaser
 
 - **No dependencies** — pure Python 3.9+, stdlib only
+- **Two output formats** — SOTA V2 CSV for sotadata upload;
+  ADIF (with `MY_GRIDSQUARE`) for LoTW, eQSL, Cloudlog
 - **Chaser logs only** — for operators who work SOTA activators from home or portable
 - **Single file** — just `obsidianchaser.py`
 
