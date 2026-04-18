@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Generated output files
+*.csv
+*.adi
+
+# Editor / OS
+.vscode/
+.idea/
+*~
+.DS_Store
