@@ -6,7 +6,6 @@ Run with:  python -m pytest test_obsidianchaser.py -v
 """
 
 import io
-import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -419,7 +418,7 @@ class TestWriteAdif(unittest.TestCase):
     def test_comment_absent_for_empty_notes(self):
         content = self._write()
         # First record has empty notes — no COMMENT field before its EOR
-        lines = [l for l in content.splitlines() if "<CALL:5>KE6TH" in l]
+        lines = [ln for ln in content.splitlines() if "<CALL:5>KE6TH" in ln]
         self.assertEqual(len(lines), 1)
         self.assertNotIn("COMMENT", lines[0])
 

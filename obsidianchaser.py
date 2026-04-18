@@ -359,7 +359,7 @@ def main():
         )
         sys.exit(1)
 
-    log(f"ObsidianChaser")
+    log("ObsidianChaser")
     log(f"  Callsign : {my_callsign}")
     log(f"  Grid     : {my_grid or '(not found — add Grid: DM04 to your note header)'}")
     log(f"  Input    : {md_path}")
@@ -422,9 +422,9 @@ def main():
         if my_grid:
             log(f"  MY_GRIDSQUARE: {my_grid} written to every QSO record.")
         else:
-            log(f"  Note: no grid square found — add 'Grid: DM04' to your note header")
-            log(f"  to have MY_GRIDSQUARE included in each ADIF record.")
-        log(f"\n  Upload at: https://www.sotadata.org.uk/en/upload/chaser")
+            log("  Note: no grid square found — add 'Grid: DM04' to your note header")
+            log("  to have MY_GRIDSQUARE included in each ADIF record.")
+        log("\n  Upload at: https://www.sotadata.org.uk/en/upload/chaser")
     else:
         with open(out_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
@@ -432,9 +432,9 @@ def main():
         log(f"\n  Wrote {len(records)} QSOs → {out_path}  (SOTA V2 CSV)")
         if my_grid:
             log(f"  Note: SOTA V2 CSV has no grid field — {my_grid} is already in")
-            log(f"  your sotadata.org.uk profile. Use --format adif to embed it per QSO.")
-        log(f"\n  Upload at: https://www.sotadata.org.uk/en/upload/chaser")
-        log(f"\n  Sample output:")
+            log("  your sotadata.org.uk profile. Use --format adif to embed it per QSO.")
+        log("\n  Upload at: https://www.sotadata.org.uk/en/upload/chaser")
+        log("\n  Sample output:")
         for r in records[:3]:
             log(f"    {','.join(r)}")
 
