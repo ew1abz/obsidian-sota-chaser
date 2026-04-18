@@ -427,9 +427,14 @@ class TestWriteAdif(unittest.TestCase):
         content = self._write()
         self.assertIn("<SOTA_REF:9>W6/CT-025", content)
 
-    def test_my_call_written(self):
+    def test_station_callsign_written(self):
         content = self._write()
-        self.assertIn("<MY_CALL:5>W6XYZ", content)
+        self.assertIn("<STATION_CALLSIGN:5>W6XYZ", content)
+
+    def test_my_call_not_used(self):
+        # MY_CALL is non-standard; SOTA site rejects it
+        content = self._write()
+        self.assertNotIn("MY_CALL", content)
 
 
 # ---------------------------------------------------------------------------

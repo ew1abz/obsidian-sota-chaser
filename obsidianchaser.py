@@ -302,8 +302,8 @@ def write_adif(records: list, out_path: Path, my_callsign: str, my_grid: str) ->
             adif_field("TIME_ON",   r[4]),
             adif_field("FREQ",      freq),
             adif_field("MODE",      r[6]),
-            adif_field("SOTA_REF",  r[2]),        # summit being chased
-            adif_field("MY_CALL",   my_callsign),
+            adif_field("SOTA_REF",        r[2]),    # summit being chased
+            adif_field("STATION_CALLSIGN", my_callsign),
         ]
         if my_grid:
             fields.append(adif_field("MY_GRIDSQUARE", my_grid))
